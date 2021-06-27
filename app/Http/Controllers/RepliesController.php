@@ -26,10 +26,10 @@ class RepliesController extends Controller
         if ($thread->lock) {
             return response('this thread is locked by admin', 423);
         }
-        //A user can reply again after 1minute
-        if (Gate::denies('create', new Reply)) {
-            return response('You are posting too frequently,pls take a break :)', 422);//error response to javascript
-        }
+        // //A user can reply again after 1minute
+        // if (Gate::denies('create', new Reply)) {
+        //     return response('You are posting too frequently,pls take a break :)', 422);//error response to javascript
+        // }
         //validation
         try {
             request()->validate([
