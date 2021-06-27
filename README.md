@@ -19,8 +19,9 @@ All Real Forum's Features included in this project.You Should Try This out
 
 2. Run This Command
 ```
-    composer install
-    npm install
+    cd Council &&
+    composer install &&
+    npm install &&
     npm run dev
 ```
 3. Create **.env** file in project directory and move .env_example codes to created .env file and run this  command
