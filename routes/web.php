@@ -30,7 +30,7 @@ Route::get('/', function () {
 Route::get('/threads', [ThreadController::class, 'index'])->name('threads.index');
 //search thread
 Route::get('/threads/search', [ThreadsSearchController::class, 'index'])->name('threadsSearch.index');
-Route::get('/threads/create', [ThreadController::class, 'create'])->name('threads.create');
+Route::get('/threads/create', [ThreadController::class, 'create'])->name('threads.create')->middleware('email-must-verified');
 Route::post('/threads/store', [ThreadController::class, 'store'])->name('threads.store')->middleware('email-must-verified');
 Route::get('/threads/{channel}/{thread}', [ThreadController::class, 'show'])->name('threads.show');
 Route::patch('/threads/{channel}/{thread}', [ThreadController::class, 'update'])->name('threads.update');
